@@ -6,11 +6,17 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+with open('.env') as f:
+    for line in f:
+        line = line.strip()
+        if line and not line.startswith('#'):
+            key, value = line.split('=', 1)
+            os.environ[key] = value
 
-DEBUG = False
+debug_mode = os.getenv("DEBUG", "").lower() == "true"
+secret_key = os.environ.get("SECRET_KEY")
 
-ALLOWED_HOSTS = ['51.250.101.69', '127.0.0.1', 'local_host', 'mypussycats.ddns.net']
+allowed_hosts = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
