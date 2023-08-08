@@ -1,8 +1,5 @@
 import os
-import sys
 from pathlib import Path
-
-from .env import DJANGO_DEBUG, SECRET_KEY
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
