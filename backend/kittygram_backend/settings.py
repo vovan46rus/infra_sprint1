@@ -2,15 +2,16 @@ import os
 import sys
 from pathlib import Path
 
+from .env import load_env
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.load_env('SECRET_KEY')
 
-DEBUG = os.getenv('DJANGO_DEBUG', '').lower() == 'false'
+DEBUG = os.load_env('DJANGO_DEBUG', '').lower() == 'false'
 
 allowed_hosts = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
