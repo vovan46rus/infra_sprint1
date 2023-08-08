@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-from .env import load_env
+from kittygram_backend.env import load_env
 
 load_env()
 
