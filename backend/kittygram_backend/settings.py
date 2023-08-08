@@ -1,8 +1,9 @@
 import os
-import sys
 from pathlib import Path
 
 from .env import load_env
+
+load_env()
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
