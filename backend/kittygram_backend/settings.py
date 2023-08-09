@@ -4,7 +4,7 @@ from pathlib import Path
 env_path = '/infra_sprint1/backend/kittygram_backend/.env'
 absolute_path = Path(env_path).resolve()
 
-with open(main_path) as f:
+with open(env_path) as f:
     for line in f:
         key, value = line.strip().split('=')
         os.environ[key] = value
