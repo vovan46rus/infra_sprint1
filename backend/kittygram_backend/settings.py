@@ -9,8 +9,9 @@ load_dotenv(absolute_path)
 
 with open(env_path) as f:
     for line in f:
-        key, value = line.strip().split('=')
-        os.environ[key] = value
+        if line.strip() and not line.startswith("#"):
+            key, value = line.strip().split("=")
+            os.environ[key] = value
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
