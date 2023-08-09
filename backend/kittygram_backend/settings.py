@@ -5,8 +5,6 @@ from pathlib import Path
 env_path = '/infra_sprint1/backend/kittygram_backend/.env'
 absolute_path = Path(env_path).resolve()
 
-load_dotenv(absolute_path)
-
 with open(env_path) as f:
     for line in f:
         if line.strip() and not line.startswith("#"):
