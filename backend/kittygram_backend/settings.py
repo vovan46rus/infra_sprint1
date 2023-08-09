@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-env_path = Path(__file__).resolve().parent.parent / 'kittygram_backend'
+env_path = Path(__file__).resolve().parent.parent / 'kittygram_backend' / '.env'
 
 with open(env_path) as f:
     for line in f:
