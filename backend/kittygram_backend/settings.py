@@ -2,7 +2,11 @@ import os
 from pathlib import Path
 
 env_path = Path(__file__).resolve().parent.parent / '.env'
-load_dotenv(dotenv_path=env_path)
+
+with open(env_path) as f:
+    for line in f:
+        key, value = line.strip().split('=')
+        os.environ[key] = value
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
