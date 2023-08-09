@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
-import .env
+
+import env
 
 env_path = '/infra_sprint1/backend/kittygram_backend/.env'
 absolute_path = Path(env_path).resolve()
