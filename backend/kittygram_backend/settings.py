@@ -1,8 +1,11 @@
 import os
 from pathlib import Path
+import .env
 
 env_path = '/infra_sprint1/backend/kittygram_backend/.env'
 absolute_path = Path(env_path).resolve()
+
+load_dotenv(absolute_path)
 
 with open(env_path) as f:
     for line in f:
