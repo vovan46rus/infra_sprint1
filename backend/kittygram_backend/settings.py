@@ -1,7 +1,8 @@
 import os
 from pathlib import Path
 
-main_path = '/infra_sprint1/backend/kittygram_backend/main.py'
+env_path = '/infra_sprint1/backend/kittygram_backend/.env'
+absolute_path = Path(env_path).resolve()
 
 with open(main_path) as f:
     for line in f:
