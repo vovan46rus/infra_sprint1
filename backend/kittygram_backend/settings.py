@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-env_path = '/infra_sprint1/backend/kittygram_backend/.env/'
+env_path = '/infra_sprint1/.gitignore/.env'
 
 with open(env_path) as f:
     for line in f:
