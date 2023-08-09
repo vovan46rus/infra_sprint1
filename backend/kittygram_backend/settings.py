@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 
-env_path = '/infra_sprint1/backend/kittygram_backend/.env'
+env_path = '/infra_sprint1/backend/kittygram_backend/env'
 absolute_path = Path(env_path).resolve()
 
 with open(env_path) as f:
