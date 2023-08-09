@@ -1,19 +1,8 @@
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv  # СДАЮСЬ!
+from dotenv import load_dotenv
 
-#with open(env_path) as f:
-#FileNotFoundError: [Errno 2] No such file or directory: '/infra_sprint1/backend/kittygram_backend/.env'
-
-#env_path = '/infra_sprint1/backend/kittygram_backend/.env'
-#absolute_path = Path(env_path).resolve()
-
-#with open(env_path) as f:
-#    for line in f:
-#        if line.strip() and not line.startswith('#'):
-#            key, value = line.strip().split('=')
-#            os.environ[key] = value
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env') 
 
@@ -23,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DJANGO_DEBUG', '').lower() == 'false'
+DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'True'
 
 allowed_hosts = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
 
